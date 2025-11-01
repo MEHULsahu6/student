@@ -1,7 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db.js");
-const authController = require("./controllers/auth/auth.controller.js");
 
 dotenv.config();
 
