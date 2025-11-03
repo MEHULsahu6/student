@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db.js");
+const admissionRoutes = require("./routes/admission.routes.js");
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 connectDB();
 app.use("/api", require("./routes/auth.routes.js"));
+app.use("/api", admissionRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server is running successfully");
